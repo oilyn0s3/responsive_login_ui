@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'components/pallate.dart';
+import 'login_page.dart';
 
 void main() {
   runApp(const MainApp());
@@ -9,10 +11,15 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: Pallete.backgroundColor,
+      ),
+      home: const Scaffold(
+        backgroundColor: Pallete.backgroundColor,
+        body: SafeArea(
+          child: LoginPage(),
         ),
       ),
     );
